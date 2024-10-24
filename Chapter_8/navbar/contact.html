@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body style="padding: 0 50px;">
+    <nav style="display: flex; background-color: #549afc; width: 100%; height: 10vh; align-items: center; justify-content: space-between; border-radius: 15px;">
+        <h2 style="padding-left: 30px; cursor: pointer; text-shadow: -2px -1px 1px grey;">GIAIC</h2>
+        <ul style="display: flex; list-style-type: none; gap: 1rem; cursor: pointer; padding-right: 30px;">
+            <li><a href="http://127.0.0.1:5500/Chapter_8/index.html">Home</a></li>
+            <li><a href="http://127.0.0.1:5500/Chapter_8/navbar/about.html">About</a></li>
+            <li><a href="http://127.0.0.1:5500/Chapter_8/navbar/portfolio.html">Portfolio</a></li>
+            <li><a href="http://127.0.0.1:5500/Chapter_8/navbar/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <br>
+    <form action="mailto:adeelarshad8900@gmail.com"></form>
+        <fieldset>
+            <legend>Your Detals:</legend>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" placeholder="Write First Name" />
+            <br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" placeholder="Write Last Name" />
+            <br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Write Email" />
+            <br><br>
+            <label for="phone">Contact Number</label>
+            <input type="number" id="phone" placeholder="Enter Contact No" min="0"  />
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Your Review:</legend>
+            <p>Would You Visit agan?</p>
+            <label for="visit">Yes</label>
+            <input type="radio" id="visit" name="visit" value="Yes" />
+            <label for="visit">No</label>
+            <input type="radio" id="visit" name="visit" value="No" />
+            <label for="visit">Maybe</label>
+            <input type="radio" id="visit" name="visit" value="Maybe" />
+            <br><br>
+            <label for="comments">Comments:</label>
+            <br>
+            <textarea name="comments" id="comments" placeholder="Message" rows="5"></textarea>
+            <br><br>
+            <input type="checkbox" id="check" name="check">
+            <label for="check">Sign me up for email updates</label>
+            <br><br>
+            <input type="submit" value="Submt Review">
+        </fieldset>
+    </form>
+    <br>
+    <div style="width: 100%; height: 6vh; background-color: #549afc; border-radius: 10px; display: flex; align-items: center; justify-content: center;">Copyrght &copy; 2024.</div>
+</body>
+</html>

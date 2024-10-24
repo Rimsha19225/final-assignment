@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Assignment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .nav li:hover{
+            border-bottom: 2.5px solid red;
+            cursor: pointer;
+            transition: 0.25s;
+        }
+        .part_1{
+            background: url(./images/grass.jpeg);
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-transform: uppercase;
+            padding-top: 50px;
+            font-size: 30px;
+            gap: 20px;
+        }
+        .left {
+            background-color: yellowgreen;
+            width: 35%;
+            height: 8vh;
+            padding-right: 200%;
+        }
+        .right {
+            background-color: yellowgreen;
+            width: 35%;
+            height: 8vh;
+            padding-left: 200%;
+        }
+        .advantage-section{
+            height: 70vh;
+        }
+        .dd3::after{
+            content: "ADVANTAGES";
+            color: #0c670c;
+        }
+        .circle{
+            margin-left: 60px;
+            background-color: #e5e2e2;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .about-section{
+            height: 80vh;
+            background-color: #f6f4f4;
+        }
+        .circle1{
+            margin-left: 60px;
+            background-color: #e5e2e2;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .dd4::after{
+            content: "us";
+            color: #0c670c;
+        }
+        .service-secton{
+            height: 65vh;
+        }
+        .dd5::after{
+            content: "services";
+            color: #0c670c;
+        }
+        .circle-service{
+            width: 200px;
+            background-color: #f6f4f4;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: gold;
+            border-radius: 50%;
+            padding: 20px;
+        }
+        .portfolio-section{
+            height: 90vh;
+            background-color: #222020d4;
+            color: #fff;
+        }
+        .dd6::after{
+            content: "portfolio";
+            color: #0c670c;
+        }
+        .portfolio-section li:hover{
+            color: goldenrod;
+            cursor: pointer;
+        }
+        .grid-container {
+            margin-left: 9%;
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 2px;
+            padding: 10px;
+            color: black;
+        }
+
+        .grid-item {
+            width: 100%;
+            height: 25vh;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .grid-item img {
+            max-width: 100px;
+            height: auto;
+        }
+
+        .grid-item p {
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .process-section{
+            height:70vh;
+        }
+        .dd7::after{
+            content: "process";
+            color: #0c670c;
+        }
+        .cir{
+            margin-left: 40px;
+            background-color: #e5e2e2;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+        }
+        .people-section{
+            height: 70vh;
+            background-color: #f6f4f4;
+        }
+        .dd8::after{
+            content: "about us";
+            color: #0c670c;
+        }
+        .round{
+            margin-left: 60px;
+            background-color: #e5e2e2;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .skills-section{
+            height: 70vh;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        @property --progess {
+            syntax: '<number>';
+            initial-value: 0;
+            inherits: false;
+        }
+        .circular_progress{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: conic-gradient(var(--cir) calc(var(--progess) * 3.6deg), #eee 0deg);
+            border-radius: 50%;
+            animation: progressAnim 2s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 90px;
+        }
+        .circular_progress::before{
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 180px;
+            height: 180px;
+            background-color: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .circular_progress span{
+            font-size: 3rem;
+            color: #000;
+            z-index: 1;
+        }
+        @keyframes progressAnim{
+            0%{
+                --progess: 0;
+            }
+            100% {
+                --progess: var(--value);
+            }
+        }
+        .ppp{
+            display: flex;
+            flex-direction: row;
+            gap: 50px;
+            justify-content: center;
+        }
+        .dd9::after{
+            content: "skills";
+            color: #0c670c;
+        }
+        .project-section{
+            height: 50vh;
+            background-color: yellowgreen;
+        }
+        .contact-section{
+            height: 80vh;
+        }
+        .dd10::after{
+            content: "contact";
+            color: #0c670c;
+        }
+        .footer-section{
+            height: 40vh;
+            background-color: #739600;
+            padding: 4rem 7rem;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            max-width: 1300px;
+            text-align: left;
+        }
+        .footer-col-section1{
+            flex: 1;
+            padding: 0 20px;
+        }
+
+/* Media query for smaller screens (tablets and mobile devices) */
+@media (max-width: 768px) {
+    nav {
+        font-size: 10px;
+        flex-direction: row;
+        height: auto;
+    }
+
+    nav ul, nav ol {
+        flex-direction: row;
+        gap: 5px;
+        padding: 10px 0;
+    }
+
+    .nav {
+        font-size: 10px; /* Reduce font size */
+        justify-content: center;
+    }
+
+    .nav li {
+        font-size: 10px;
+        text-align: center; /* Center align items */
+    }
+
+    img {
+        width: 30px; /* Reduce logo size */
+        height: auto;
+        margin-left: 0.3rem;
+    }
+}
+
+/* Media query for very small screens (mobile phones) */
+@media (max-width: 480px) {
+    nav {
+        font-size: 5px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    nav i{
+        width: 10px;
+        height: auto;
+    }
+
+    .nav {
+        font-size: 5px;
+    }
+
+    nav ul, nav ol {
+        flex-direction: row;
+        gap: 3px;
+        padding: 3px;
+        align-items: center;
+    }
+    .nav li {
+        font-size: 5px;
+        text-align: center;
+        gap: 3px;
+    }
+
+    img {
+        width: 15px; /* Reduce logo size */
+        height: auto;
+        margin-left: 0.2rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav style="display: flex; list-style-type: none; width: 100%; height: 5vh; justify-content: space-between; background-color: black; align-items: center; font-size: 12px;">
+        <ul style="display: flex; list-style-type: none; color: bisque; gap: 15px; padding-left: 25px;">
+            <li><i class="fa-brands fa-google"></i></li>
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-twitter"></i></li>
+            <li><i class="fa-brands fa-linkedin"></i></li>
+            <li><i class="fa-brands fa-youtube"></i></li>
+        </ul>
+        <ol style="display: flex; list-style-type: none; color: bisque; gap: 15px; padding-right: 25px;">
+            <li><i class='fab fa-whatsapp' style='font-size:20px; color: #25D366;'></i><a href=" https://wa.me/+923131156294" style="text-decoration: none; color: bisque;">  +923131156294</a></li>
+            <li><i class="fa-solid fa-phone" style="font-size:20px; color: rgb(14, 157, 205);"></i><a href="tel:03333039912" style="text-decoration: none; color: bisque;">  03333039912</a></li>
+        </ol>
+    </nav>
+    <nav style="display: flex; list-style-type: none; width: 100%; height: 10vh; justify-content: space-between; align-items: center;">
+        <img src="./images/logo.png" alt="logo" width=100px height="50px" style="margin-left: 1.5rem;">
+        <ul style="display: flex; list-style-type: none; gap: 15px; padding-right: 20px; font-size: 20px;" class="nav">
+            <li><a href="http://127.0.0.1:5500/Final_Assignment/index.html">Home</a></li>
+            <li><a href="#adv">Why Us</a></li>
+            <li><a href="#abu">About</a></li>
+            <li><a href="#ser">Services</a></li>
+            <li><a href="#por">Portfolio</a></li>
+            <li><a href="#pro">Process</a></li>
+            <li><a href="#rev">Reviews</a></li>
+            <li><a href="#skill">Our Skills</a></li>
+            <li><a href="#con">Contact Us</a></li>
+        </ul>
+    </nav>
+    <div style="width: 100%; height: 50vh; text-align: center; font-weight: bolder; background-size: cover; background-repeat: no-repeat;" class="part_1">
+        <div class="container">
+            <ul style="display: flex; list-style-type: none; margin-right: 1350px;">
+                <li class="left"></li>
+                <li style="margin: 0 100px;">We are Experts</li>
+                <li class="right"></li>
+            </ul>
+        </div>
+            <p style="padding: 0 120px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, voluptate? Obcaecati iure quibusdam unde magnam, laudantium ex aperiam quaerat fugit vitae recusandae facilis molestiae eius et non, reprehenderit repellendus similique? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam nulla aliquid aut ut cupiditate at corrupti quae fugit. Quidem delectus minima cum autem ipsam veritatis dicta magni provident, eos libero.</p>
+            <button style="background-color: orange; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">Read More</button>
+    </div>
+    <div class="advantage-section" id="adv">
+        <div>
+            <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem;" class="dd3">Our </h2>
+            <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        </div>
+        <ul style="display: flex; list-style-type: none; gap: 20px; justify-content: space-evenly; padding-top: 30px; padding-right: 25px;">
+            <div>
+                <li class="circle"><i class="fa-sharp fa-regular fa-lightbulb" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center;">innovation</h4>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, possimus, illum adipisci repellat nobis praesentium</p>
+            </div>
+            <div>
+                <li class="circle"><i class="fa-regular fa-thumbs-up" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center;">quality</h4>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, possimus, illum adipisci repellat nobis praesentium</p>
+            </div>
+            <div>
+                <li class="circle"><i class="fa-regular fa-clock" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center;">experience</h4>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, possimus, illum adipisci repellat nobis praesentium</p>
+            </div>
+            <div>
+                <li class="circle"><i class="fa-solid fa-users" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center;">Happy Client</h4>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, possimus, illum adipisci repellat nobis praesentium</p>
+            </div>
+            <div>
+                <li class="circle"><i class="fa-regular fa-comments" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center;">support</h4>
+                <p style="text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt beatae, possimus, illum adipisci repellat nobis praesentium</p>
+            </div>
+        </ul>
+    </div>
+    <div class="about-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem; padding-top: 2rem;" class="dd4" id="abu">About </h2>
+        <div style="column-count: 2;">
+            <div style="padding: 0 10px; margin-left: 20%;">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ipsa ducimus omnis! Quod alias aspernatur, eum suscipit accusantium culpa doloremque tempore iusto ipsum fuga ad soluta dolores ratione labore eligendi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quia exercitationem animi reprehenderit id omnis, veritatis quos veniam ea expedita perspiciatis ipsum illum modi atque sint dolorum facere voluptatem beatae? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, laudantium! Voluptate ab doloribus recusandae odio aliquid! Incidunt, alias. Minima quam, repudiandae dolores dicta porro ullam sunt aperiam reiciendis a esse.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laborum nulla nam mollitia quisquam accusamus tempora possimus explicabo. Facilis hic beatae magni voluptatibus, ad optio facere vitae quos quia natus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam in odio numquam placeat nemo voluptate explicabo quo modi perspiciatis minima ab, dolorum eius tempora illo eligendi cumque, sequi quibusdam. Blanditiis. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolorem nam veniam, neque qui necessitatibus sequi cum unde quasi cupiditate eveniet nesciunt, blanditiis ullam. Dolore laudantium assumenda libero sequi voluptates.</p>
+                <button style="background-color: orange; border: none; padding: 10px; border-radius: 10px; cursor: pointer;">Read More</button>
+            </div>
+        <div style="padding-bottom: 20px 0; margin-left: 20%;">
+            <img src="images/notebook-20731.png" alt="computer" width="400px" height="400px">
+        </div>
+        </div>
+    </div>
+    <div class="service-secton">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem;" class="dd5" id="ser">Our </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+    <ul style="list-style-type: none; display: flex; gap: 20px; justify-content: center; margin-top: 5rem;">
+        <li>
+            <div class="circle-service">
+                <div class="icon">
+                    <i class="fa-solid fa-star" style="font-size: 30px; color: red; display: flex; justify-content: center; padding-top: 2px;"></i>
+                </div>
+                <h4>WEB DESIGN</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis tenetur inventore minus</p>
+                <a href="#" style="color: yellowgreen; padding-top: 25px;">Read More</a>
+            </div>
+        </li>
+        <li>
+            <div class="circle-service">
+                <div class="icon">
+                    <i class="fa-solid fa-star" style="font-size: 30px; color: red; display: flex; justify-content: center; padding-top: 2px;"></i>
+                </div>
+                <h4>GRAPHIC DESIGN</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis tenetur inventore minus</p>
+                <a href="#" style="color: yellowgreen; padding-top: 25px;">Read More</a>
+            </div>
+        </li>
+        <li>
+            <div class="circle-service">
+                <div class="icon">
+                    <i class="fa-solid fa-star" style="font-size: 30px; color: red; display: flex; justify-content: center; padding-top: 2px;"></i>
+                </div>
+                <h4>BRANDING</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis tenetur inventore minus</p>
+                <a href="#" style="color: yellowgreen; padding-top: 25px;">Read More</a>
+            </div>
+        </li>
+        <li>
+            <div class="circle-service">
+                <div class="icon">
+                    <i class="fa-solid fa-star" style="font-size: 30px; color: red; display: flex; justify-content: center; padding-top: 2px;"></i>
+                </div>
+                <h4>MARKETING</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad perferendis tenetur inventore minus</p>
+                <a href="#" style="color: yellowgreen; padding-top: 25px;">Read More</a>
+            </div>
+        </li>
+    </ul>
+    </div>
+    <div class="portfolio-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem; padding-top: 2rem;" class="dd6" id="por">Our </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        <ul style="list-style-type: none; display: flex; gap: 40px; justify-content:center; padding-top: 2rem; font-weight: bold;">
+            <li>WEB DESIGN</li>
+            <li>GRAPHIC DESIGN</li>
+            <li>BRANDING</li>
+            <li>LOGO</li>
+            <li>MARKETING</li>
+            <li>ADVERTISMENT</li>
+        </ul>
+        <div class="grid-container">
+            <div class="grid-item"><img src="./images/horse.png" alt="Horse Logo"><p>HORSE</p></div>
+            <div class="grid-item"><img src="./images/social tree.png" alt="Social Trees"><p>SOCIAL TREES</p></div>
+            <div class="grid-item"><img src="./images/brain.png" alt="Creative Brain"><p>CREATIVE BRAIN</p></div>
+            <div class="grid-item"><img src="./images/team.png" alt="Team Success"><p>TEAM SUCCESS</p></div>
+            <div class="grid-item"><img src="./images/rahino group.png" alt="Rhino Group"><p>RHINO GROUP</p></div>
+            <div class="grid-item"><img src="./images/growth.png" alt="Growth Place"><p>GROWTH PLACE</p></div>
+            <div class="grid-item"><img src="./images/brain work.png" alt="Brain Works"><p>BRAIN WORKS</p></div>
+            <div class="grid-item"><img src="./images/lion.png" alt="Lion Group"><p>LION GROUP</p></div>
+            <div class="grid-item"><img src="./images/hand.png" alt="Growth Place Red"><p>GROWTH PLACE</p></div>
+            <div class="grid-item"><img src="./images/social.png" alt="Social Group"><p>SOCIAL GROUP</p></div>
+        </div>
+    </div>
+    <div class="process-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem;" class="dd7" id="pro">Our </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        <ul style="display: flex; list-style-type: none; gap: 20px; justify-content: space-evenly; padding-top: 30px; padding-right: 25px; padding-right: 70px;">
+            <div class="cir">
+                <li class="cod"><i class="fa-solid fa-mobile-screen-button" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">request call</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+            <div class="cir">
+                <li class="cod"><i class="fa-solid fa-message" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">consultation</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+            <div class="cir">
+                <li class="cod"><i class="fa-solid fa-folder-tree" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">planning</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+            <div class="cir">
+                <li class="cod"><i class="fa-solid fa-gear" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">work process</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+            <div class="cir">
+                <li class="cod"><i class="fa-solid fa-pencil" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">correcting</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+            <div class="cir">
+                <li class="cod"><i class="fa-regular fa-square-check" style="font-size: 70px; color: green; display: flex; justify-content: center; padding-top: 40px;"></i></li>
+                <h4 style="text-transform: uppercase; display: flex; justify-content: center; padding-top: 2rem; width: 150px;">deliver</h4>
+                <p style="text-align: center; width: 150px;">Lorem ipsum dolor sit amet consectetur adipis elit. Nesciunt beatae</p>
+            </div>
+        </ul>
+    </div>
+    <div class="people-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem; padding-top: 1.5rem;" class="dd8" id="pro">people </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        <div>
+            <ul style="display: grid; list-style-type: none; padding-top: 2rem; grid-template-columns: 1fr 1fr; justify-content: center; padding-right: 2rem;">
+            <li>
+                <div style="display: flex; gap: 2rem; bottom: 1rem;">
+                    <div class="round"><i class="fa-regular fa-user" style="font-size: 50px; color: green; display: flex; justify-content: center; padding-top: 20px; width: 100px;"></i></div>
+                    <div>
+                        <h3 style="text-transform: uppercase;">john doe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad est beatae culpa modi totam placeat eos. Magnam, aliquid quasi atque maiores natus aliquam, recusandae error praesentium nobis, ex eius sapiente!</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div style="display: flex; gap: 2rem; bottom: 1rem;">
+                    <div class="round"><i class="fa-regular fa-user" style="font-size: 50px; color: green; display: flex; justify-content: center; padding-top: 20px; width: 100px;"></i></div>
+                    <div>
+                        <h3 style="text-transform: uppercase;">john doe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad est beatae culpa modi totam placeat eos. Magnam, aliquid quasi atque maiores natus aliquam, recusandae error praesentium nobis, ex eius sapiente!</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div style="display: flex; gap: 2rem; bottom: 1rem;">
+                    <div class="round"><i class="fa-regular fa-user" style="font-size: 50px; color: green; display: flex; justify-content: center; padding-top: 20px; width: 100px;"></i></div>
+                    <div>
+                        <h3 style="text-transform: uppercase;">john doe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad est beatae culpa modi totam placeat eos. Magnam, aliquid quasi atque maiores natus aliquam, recusandae error praesentium nobis, ex eius sapiente!</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div style="display: flex; gap: 2rem; bottom: 1rem;">
+                    <div class="round"><i class="fa-regular fa-user" style="font-size: 50px; color: green; display: flex; justify-content: center; padding-top: 20px; width: 100px;"></i></div>
+                    <div>
+                        <h3 style="text-transform: uppercase;">john doe</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad est beatae culpa modi totam placeat eos. Magnam, aliquid quasi atque maiores natus aliquam, recusandae error praesentium nobis, ex eius sapiente!</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>
+    <div class="skills-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem;" class="dd9" id="skill">Our </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        <div class="ppp">
+        <div class="container">
+            <div class="circular_progress" style="--cir: crimson; --value:70">
+                <span>70%</span>
+            </div>
+            <h3 style="text-transform: uppercase; font-size: 1rem;">html</h3>
+        </div>
+        <div class="container">
+            <div class="circular_progress" style="--cir: orange; --value:40">
+                <span>40%</span>
+            </div>
+            <h3 style="text-transform: uppercase; font-size: 1rem;">SEO & Ads</h3>
+        </div>
+        <div class="container">
+            <div class="circular_progress" style="--cir: cyan; --value:90">
+                <span>90%</span>
+            </div>
+            <h3 style="text-transform: uppercase; font-size: 1rem;">branding</h3>
+        </div>
+        <div class="container">
+            <div class="circular_progress" style="--cir: magenta; --value:55">
+                <span>55%</span>
+            </div>
+            <h3 style="text-transform: uppercase; font-size: 1rem;">web design</h3>
+        </div>
+        </div>
+    </div>
+    <div class="project-section">
+        <h2 style="font-size: 4.5rem; color: #e5e2e2; padding-top: 2.5rem; text-align: center;">START YOUR NEW PROJECT</h2>
+        <form>
+            <ul style="list-style-type: none; display: flex; gap: 20px; justify-content: center; margin-top: -1rem;">
+                <li><input type="text" placeholder="Your Name" style="background-color: #f0f0f0; border-radius: 5px; padding: 0.9rem; border: none; font-size: 1rem;"/></li>
+                <li><input type="email" placeholder="Your Email" style="background-color: #f0f0f0; border-radius: 5px; padding: 0.9rem; border: none; font-size: 1rem;"/></li>
+                <li><input type="tel" placeholder="Your Phone" style="background-color: #f0f0f0; border-radius: 5px; padding: 0.9rem; border: none; font-size: 1rem;"/></li>
+                <li><button style="background-color: goldenrod; cursor: pointer; border-radius: 5px; padding: 0.9rem; border: none; font-size: 1rem;">Send Request</button></li>
+            </ul>
+        </form>
+        <p style="padding: 0 250px; text-align: center; padding-top: 1rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+    </div>
+    <div class="contact-section">
+        <h2 style="text-transform: uppercase; text-align: center; font-size: 3rem;" class="dd10" id="con">our </h2>
+        <p style="padding: 0 250px; text-align: center;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit blanditiis aliquam quo. Et, optio. Suscipit nemo dignissimos ducimus architecto nam nulla praesentium dicta nesciunt! Harum iure vitae consequuntur facere quisquam?</p>
+        <p style="text-align: center;"><i class="fa-solid fa-location-dot" style="font-size: 20px; color: green;"></i> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque necessitatibus molestias reprehenderit similique earum sed temporibus et!</p>
+        <ul style="list-style-type: none; display: flex; justify-content: center; gap: 20px;">
+            <li style="font-size: 1.2rem"><i class="fa-solid fa-phone" style="font-size: 20px; color: green;"></i>  (304)386-6719</li>
+            <li style="font-size: 1.2rem"><i class="fa-solid fa-phone" style="font-size: 20px; color: green;"></i>  (317)011-3001</li>
+            <li style="font-size: 1.2rem"><i class="fa-solid fa-envelope" style="font-size: 20px; color: green;"></i>  info@website.com</li>
+        </ul>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14473.738330933998!2d66.9630595!3d24.9172611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1729452967352!5m2!1sen!2s" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="footer-section">
+        <div style="width: 15rem;" class="footer-col-section1" id="rev">
+            <img src="./images/logo.png" alt="logo" width="150px" height="100px">
+            <p style="width: 350px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis debitis, incidunt ipsum in consequatur itaque eveniet earum vel aliquid ab iure? Earum quam fugiat quia iure praesentium? Atque, necessitatibus maiores.</p>
+            <p style="margin-top: 3rem; font-size: 1.5rem;">&copy; Panacloud 2019</p>
+        </div>
+        <div style="column-count: 3; column-rule-color: #fff; column-rule-style: solid; column-rule-width: 5px;">
+            <div class="footer-col-section">
+                <h3 style="text-transform: uppercase; padding: 0 20px; margin-left: 1rem; padding-bottom: 1.2rem;">Services</h3>
+                <ul style="text-decoration-line: underline; list-style-type: none;"> 
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-section">
+                <h3 style="text-transform: uppercase; padding: 0 20px; margin-left: 1rem; padding-top: 1rem; padding-bottom: 1.2rem;">useful links</h3>
+                <ul style="text-decoration-line: underline; list-style-type: none;"> 
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                    <li style="font-size: 1rem; padding-bottom: 0.6rem;"><a href="#" style="color: #e5e2e2;">Lorem Ipsum Dolor</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-section">
+                <h3 style="text-transform: uppercase; padding: 0 20px; margin-left: 1rem; padding-top: 1rem; padding-bottom: 1.2rem;">contact</h3>
+                <ul style="list-style-type: none;">
+                    <li style="font-size: 1.2rem; padding-bottom: 1rem;"><i class="fa-solid fa-phone" style="font-size: 20px; color: #f6f9f6;"></i>  (304)386-6719</li>
+                    <li style="font-size: 1.2rem; padding-bottom: 1rem;"><i class="fa-solid fa-phone" style="font-size: 20px; color: #f6f9f6;"></i>  (317)011-3001</li>
+                    <li style="font-size: 1.2rem; padding-bottom: 1rem;"><i class="fa-solid fa-envelope" style="font-size: 20px; color: #f6f9f6;"></i>  info@website.com</li>
+                </ul>
+                <h3 style="text-transform: uppercase; padding: 0 20px; margin-left: 1rem;">FOLLOW US</h3>
+                <ul style="display: flex; list-style-type: none; color: bisque; gap: 15px; padding-left: 40px;">
+                    <li><i class="fa-brands fa-google" style="color: #000;"></i></li>
+                    <li><i class="fa-brands fa-facebook" style="color: #000;"></i></li>
+                    <li><i class="fa-brands fa-twitter" style="color: #000;"></i></li>
+                    <li><i class="fa-brands fa-linkedin" style="color: #000;"></i></li>
+                    <li><i class="fa-brands fa-youtube" style="color: #000;"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
